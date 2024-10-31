@@ -2,7 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./screens/Dashboard";
-import Header from "./components";
+import Header from "./components/Header/Header";
 function App() {
     return (
         <BrowserRouter>

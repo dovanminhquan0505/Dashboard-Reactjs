@@ -16,6 +16,19 @@ header {
     background: #fff;
 }
 
+::-webkit-scrollbar {
+    width: 5px !important;
+    height: 5px !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #93b4f5 !important;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
 header .logo {
     text-decoration: none;
 }
@@ -91,7 +104,7 @@ header button.rounded-circle:hover svg {
     color: #0858f7;
 }
 
-.myAccount .userImg {
+.userImg {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,7 +116,7 @@ header button.rounded-circle:hover svg {
     border-radius: 100%;
 }
 
-.myAccount .userImg .rounded-circle {
+.userImg .rounded-circle {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,7 +127,7 @@ header button.rounded-circle:hover svg {
     overflow: hidden;
 }
 
-.myAccount .userImg .rounded-circle img {
+.userImg .rounded-circle img {
     object-fit: contain;
     width: 40px;
     height: 40px;
@@ -137,4 +150,71 @@ header button.rounded-circle:hover svg {
     color: #000;
     opacity: 0.8;
     margin-bottom: 0;
+}
+
+/* Notifications Wrapper */
+#notifications-menu .MuiPaper-elevation{
+    right: 240px !important;
+    width: 300px !important;
+    left: 950px !important;
+    top: 60px !important;
+}
+
+.dropdownInfo {
+    padding-left: 15px;
+}
+
+.dropdownInfo h4{
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    white-space: break-spaces;
+    line-height: 21px;
+    margin-bottom: 0px;
+}
+
+.dropdownInfo h4 b {
+    font-weight: 600;
+}
+
+.dropdownInfo p {
+    font-size: 12px !important;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.text-sky {
+    color: #0858f7 !important;
+}
+
+.dropdownInfo h4 b:nth-child(2) {
+    margin-left: 4px;
+}
+
+.dropdown__list .head {
+    padding: 10px 0px;
+}
+
+.dropdown__list .head h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.dropdown__list .css-9mgopn-MuiDivider-root{
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+.dropdown__list li.MuiButtonBase-root {
+    background: #ebf6ff !important;
+    color: #000 !important;
+    padding: 10px 15px !important;
+}
+
+.dropdown__list li.MuiButtonBase-root:hover {
+    background: #e7eff6 !important;
+}
+
+.dropdown__list .scroll {
+    max-height: 250px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }

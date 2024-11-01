@@ -11,26 +11,30 @@ import { IoCartOutline } from "react-icons/io5";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { FaRegBell } from "react-icons/fa6";
 import userImg from "../../assets/images/userImg.jpg";
-import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Tooltip from "@mui/material/Tooltip";
 import { FaUser } from "react-icons/fa";
 import { BsShieldFillExclamation } from "react-icons/bs";
 import Logout from "@mui/icons-material/Logout";
 
 const Header = () => {
-    const [anchorEl, setAnchorEl] = useState(null);
-    const open = Boolean(anchorEl);
+    const [myAccountDrop, setMyAccountDrop] = useState(null);
+    const [notifications, setNotifications] = useState(false);
+    const openMyAccount = Boolean(myAccountDrop);
+    const openNotifications = Boolean(notifications);
     const handleOpenMyAccount = (event) => {
-        setAnchorEl(event.currentTarget);
+        setMyAccountDrop(event.currentTarget);
     };
     const handleCloseMyAccount = () => {
-        setAnchorEl(null);
+        setMyAccountDrop(null);
+    };
+    const handleOpenNotifications = () => {
+        setNotifications(true);
+    };
+    const handleCloseNotifications = () => {
+        setNotifications(false);
     };
 
     return (
@@ -66,9 +70,266 @@ const Header = () => {
                             <Button className="rounded-circle me-3">
                                 <MdOutlineMailOutline />
                             </Button>
-                            <Button className="rounded-circle me-3">
-                                <FaRegBell />
-                            </Button>
+                            <div className="notificationWrapper position-relative">
+                                <Button
+                                    className="rounded-circle me-3"
+                                    onClick={handleOpenNotifications}
+                                >
+                                    <FaRegBell />
+                                </Button>
+                                <Menu
+                                    anchorEl={notifications}
+                                    className="notifications dropdown__list"
+                                    id="notifications-menu"
+                                    open={openNotifications}
+                                    onClose={handleCloseNotifications}
+                                    onClick={handleCloseNotifications}
+                                    slotProps={{
+                                        paper: {
+                                            elevation: 0,
+                                            sx: {
+                                                overflow: "visible",
+                                                filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+                                                mt: 1.5,
+                                                "& .MuiAvatar-root": {
+                                                    width: 32,
+                                                    height: 32,
+                                                    ml: -0.5,
+                                                    mr: 1,
+                                                },
+                                                "&::before": {
+                                                    content: '""',
+                                                    display: "block",
+                                                    position: "absolute",
+                                                    top: 0,
+                                                    right: 14,
+                                                    width: 10,
+                                                    height: 10,
+                                                    bgcolor: "background.paper",
+                                                    transform:
+                                                        "translateY(-50%) rotate(45deg)",
+                                                    zIndex: 0,
+                                                },
+                                            },
+                                        },
+                                    }}
+                                    transformOrigin={{
+                                        horizontal: "right",
+                                        vertical: "top",
+                                    }}
+                                    anchorOrigin={{
+                                        horizontal: "right",
+                                        vertical: "bottom",
+                                    }}
+                                >
+                                    <div className="head ps-3 pb-1">
+                                        <h4>Notifications (12)</h4>
+                                    </div>
+
+                                    <Divider className="mb-1" />
+
+                                    <div className="scroll">
+                                        <MenuItem
+                                            onClick={handleCloseNotifications}
+                                        >
+                                            <div className="d-flex">
+                                                <div>
+                                                    <div className="userImg">
+                                                        <span className="rounded-circle">
+                                                            <img
+                                                                src={userImg}
+                                                                alt=""
+                                                            />
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Minh Quân</b>{" "}
+                                                            added to his
+                                                            favorite list
+                                                            <b>
+                                                                Leather belt
+                                                                steve madden
+                                                            </b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">
+                                                        few seconds ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </MenuItem>
+                                        <MenuItem
+                                            onClick={handleCloseNotifications}
+                                        >
+                                            <div className="d-flex">
+                                                <div>
+                                                    <div className="userImg">
+                                                        <span className="rounded-circle">
+                                                            <img
+                                                                src={userImg}
+                                                                alt=""
+                                                            />
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Minh Quân</b>{" "}
+                                                            added to his
+                                                            favorite list
+                                                            <b>
+                                                                Leather belt
+                                                                steve madden
+                                                            </b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">
+                                                        few seconds ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </MenuItem>
+                                        <MenuItem
+                                            onClick={handleCloseNotifications}
+                                        >
+                                            <div className="d-flex">
+                                                <div>
+                                                    <div className="userImg">
+                                                        <span className="rounded-circle">
+                                                            <img
+                                                                src={userImg}
+                                                                alt=""
+                                                            />
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Minh Quân</b>{" "}
+                                                            added to his
+                                                            favorite list
+                                                            <b>
+                                                                Leather belt
+                                                                steve madden
+                                                            </b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">
+                                                        few seconds ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </MenuItem>
+                                        <MenuItem
+                                            onClick={handleCloseNotifications}
+                                        >
+                                            <div className="d-flex">
+                                                <div>
+                                                    <div className="userImg">
+                                                        <span className="rounded-circle">
+                                                            <img
+                                                                src={userImg}
+                                                                alt=""
+                                                            />
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Minh Quân</b>{" "}
+                                                            added to his
+                                                            favorite list
+                                                            <b>
+                                                                Leather belt
+                                                                steve madden
+                                                            </b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">
+                                                        few seconds ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </MenuItem>
+                                        <MenuItem
+                                            onClick={handleCloseNotifications}
+                                        >
+                                            <div className="d-flex">
+                                                <div>
+                                                    <div className="userImg">
+                                                        <span className="rounded-circle">
+                                                            <img
+                                                                src={userImg}
+                                                                alt=""
+                                                            />
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Minh Quân</b>{" "}
+                                                            added to his
+                                                            favorite list
+                                                            <b>
+                                                                Leather belt
+                                                                steve madden
+                                                            </b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">
+                                                        few seconds ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </MenuItem>
+                                        <MenuItem
+                                            onClick={handleCloseNotifications}
+                                        >
+                                            <div className="d-flex">
+                                                <div>
+                                                    <div className="userImg">
+                                                        <span className="rounded-circle">
+                                                            <img
+                                                                src={userImg}
+                                                                alt=""
+                                                            />
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Minh Quân</b>{" "}
+                                                            added to his
+                                                            favorite list
+                                                            <b>
+                                                                Leather belt
+                                                                steve madden
+                                                            </b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">
+                                                        few seconds ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </MenuItem>
+                                    </div>
+                                </Menu>
+                            </div>
                         </div>
 
                         <div className="col-2 myAccWrapper">
@@ -88,9 +349,9 @@ const Header = () => {
                                 </div>
                             </Button>
                             <Menu
-                                anchorEl={anchorEl}
+                                anchorEl={myAccountDrop}
                                 id="account-menu"
-                                open={open}
+                                open={openMyAccount}
                                 onClose={handleCloseMyAccount}
                                 onClick={handleCloseMyAccount}
                                 slotProps={{

@@ -328,6 +328,12 @@ const Header = () => {
                                             </div>
                                         </MenuItem>
                                     </div>
+
+                                    <div className="pt-2 w-100">
+                                        <Button className="btn-blue w-100">
+                                            View All Notifications
+                                        </Button>
+                                    </div>
                                 </Menu>
                             </div>
                         </div>

@@ -29,6 +29,15 @@ header {
     background: transparent !important;
 }
 
+.btn-blue {
+    background: #4a7de5 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #fff !important;
+    text-transform: capitalize !important;
+    border-radius: 5px !important;
+}
+
 header .logo {
     text-decoration: none;
 }

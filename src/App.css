@@ -74,6 +74,15 @@ header button.rounded-circle:hover svg {
     color: #292929;
 }
 
+#account-menu li {
+    font-size: 14px !important;
+    padding: 12px 15px !important;
+}
+
+#account-menu li svg {
+    font-size: 17px !important;
+}
+
 .myAccount {
     text-align: left !important;
     padding-left: 0px !important;

@@ -19,8 +19,8 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
-import PersonAdd from "@mui/icons-material/PersonAdd";
-import Settings from "@mui/icons-material/Settings";
+import { FaUser } from "react-icons/fa";
+import { BsShieldFillExclamation } from "react-icons/bs";
 import Logout from "@mui/icons-material/Logout";
 
 const Header = () => {
@@ -132,23 +132,16 @@ const Header = () => {
                                 }}
                             >
                                 <MenuItem onClick={handleCloseMyAccount}>
-                                    <Avatar /> Profile
-                                </MenuItem>
-                                <MenuItem onClick={handleCloseMyAccount}>
-                                    <Avatar /> My account
-                                </MenuItem>
-                                <Divider />
-                                <MenuItem onClick={handleCloseMyAccount}>
                                     <ListItemIcon>
-                                        <PersonAdd fontSize="small" />
+                                        <FaUser fontSize="medium" />
                                     </ListItemIcon>
-                                    Add another account
+                                    My Account
                                 </MenuItem>
                                 <MenuItem onClick={handleCloseMyAccount}>
                                     <ListItemIcon>
-                                        <Settings fontSize="small" />
+                                        <BsShieldFillExclamation fontSize="medium" />
                                     </ListItemIcon>
-                                    Settings
+                                    Reset Password
                                 </MenuItem>
                                 <MenuItem onClick={handleCloseMyAccount}>
                                     <ListItemIcon>

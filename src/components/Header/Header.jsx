@@ -22,19 +22,32 @@ import Logout from "@mui/icons-material/Logout";
 const Header = () => {
     const [myAccountDrop, setMyAccountDrop] = useState(null);
     const [notifications, setNotifications] = useState(false);
+    const [carts, setCarts] = useState(false);
     const openMyAccount = Boolean(myAccountDrop);
     const openNotifications = Boolean(notifications);
+    const openCarts = Boolean(carts);
+    // Account drop
     const handleOpenMyAccount = (event) => {
         setMyAccountDrop(event.currentTarget);
     };
     const handleCloseMyAccount = () => {
         setMyAccountDrop(null);
     };
+
+    // Notifications drop
     const handleOpenNotifications = () => {
         setNotifications(true);
     };
     const handleCloseNotifications = () => {
         setNotifications(false);
+    };
+
+    // Carts drop
+    const handleOpenCarts = () => {
+        setCarts(true);
+    };
+    const handleCloseCarts = () => {
+        setCarts(false);
     };
 
     return (

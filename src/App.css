@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif !important;
     background: #ebe9e9;
 }
 
@@ -233,16 +233,62 @@ header button.rounded-circle:hover svg {
 }
 
 .main .sidebarWrapper {
-    width: 20%;
-    flex: 0 0 20%;
+    width: 19%;
+    flex: 0 0 19%;
     transition: all 0.3s ease-in-out;
 }
 
 .main .sidebarWrapper .sidebar {
-    width: 20%;
+    width: 19%;
     height: 100vh;
     position: fixed;
     top: 70px;
     left: 0px;
     background: #fff;
+}
+
+.main .sidebarWrapper .sidebar ul {
+    margin-bottom: 0px;
+    padding-left: 0px !important;
+}
+
+.main .sidebarWrapper .sidebar ul li {
+    list-style: none;
+}
+
+.main .sidebarWrapper .sidebar ul li button {
+    color: #575555;
+    text-align: left;
+    justify-content: left;
+    border-radius: 0px !important;
+    padding: 12px 15px !important;
+    align-items: center;
+    text-transform: capitalize !important;
+    font-weight: 500 !important;
+    font-family: "Open Sans", sans-serif !important;
+}
+
+.main .sidebarWrapper .sidebar ul li button .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.main .sidebarWrapper .sidebar ul li button .icon svg {
+    color: #575555;
+    opacity: 0.8;
+    font-size: 20px;
+}
+
+.main .sidebarWrapper .sidebar ul li button .arrow {
+    color: #575555;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
 }

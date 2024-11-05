@@ -7,7 +7,7 @@
 
 body {
     font-family: "Open Sans", sans-serif !important;
-    background: #ebe9e9;
+    background: #ebe9e9 !important;
 }
 
 header {
@@ -46,7 +46,7 @@ header .logo {
     text-decoration: none;
 }
 
-header .logo img{
+header .logo img {
     width: 45px;
 }
 
@@ -72,7 +72,6 @@ header button.rounded-circle svg {
 header button.rounded-circle:hover svg {
     color: #0858f7 !important;
 }
-
 
 .searchBox {
     width: 400px;
@@ -166,7 +165,7 @@ header button.rounded-circle:hover svg {
 }
 
 /* Notifications Wrapper */
-#notifications-menu .MuiPaper-elevation{
+#notifications-menu .MuiPaper-elevation {
     right: 240px !important;
     width: 300px !important;
     left: 950px !important;
@@ -177,7 +176,7 @@ header button.rounded-circle:hover svg {
     padding-left: 15px;
 }
 
-.dropdownInfo h4{
+.dropdownInfo h4 {
     font-size: 13px !important;
     font-weight: 500 !important;
     white-space: break-spaces;
@@ -212,7 +211,7 @@ header button.rounded-circle:hover svg {
     font-weight: 600;
 }
 
-.dropdown__list .css-9mgopn-MuiDivider-root{
+.dropdown__list .css-9mgopn-MuiDivider-root {
     border-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -241,15 +240,31 @@ header button.rounded-circle:hover svg {
 .main .sidebarWrapper .sidebar {
     width: 19%;
     height: 100vh;
+    max-height: calc(100% - 70px);
     position: fixed;
     top: 70px;
     left: 0px;
     background: #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+}
+
+.main .sidebarWrapper .sidebar::-webkit-scrollbar {
+    width: 5px !important;
+}
+
+.main .sidebarWrapper .sidebar::-webkit-scrollbar-thumb {
+    background: transparent !important;
+}
+
+.main .sidebarWrapper:hover .sidebar::-webkit-scrollbar {
+    background: #a8a4a4 !important;
 }
 
 .main .sidebarWrapper .sidebar ul {
     margin-bottom: 0px;
-    padding-left: 0px !important;
+    padding: 10px 15px !important;
 }
 
 .main .sidebarWrapper .sidebar ul li {
@@ -257,15 +272,21 @@ header button.rounded-circle:hover svg {
 }
 
 .main .sidebarWrapper .sidebar ul li button {
-    color: #575555;
+    color: #5e5d72;
     text-align: left;
     justify-content: left;
-    border-radius: 0px !important;
-    padding: 12px 15px !important;
+    border-radius: 10px !important;
+    padding: 12px 10px !important;
     align-items: center;
     text-transform: capitalize !important;
     font-weight: 500 !important;
     font-family: "Open Sans", sans-serif !important;
+    font-size: 15px;
+}
+
+.main .sidebarWrapper .sidebar ul li button * {
+    color: #000;
+    opacity: 0.8;
 }
 
 .main .sidebarWrapper .sidebar ul li button .icon {
@@ -278,8 +299,6 @@ header button.rounded-circle:hover svg {
 }
 
 .main .sidebarWrapper .sidebar ul li button .icon svg {
-    color: #575555;
-    opacity: 0.8;
     font-size: 20px;
 }
 
@@ -291,4 +310,8 @@ header button.rounded-circle:hover svg {
     justify-content: center;
     width: 25px;
     height: 25px;
+}
+
+.main .sidebarWrapper .sidebar ul li button:hover {
+    background: #f1f1f1 !important;
 }

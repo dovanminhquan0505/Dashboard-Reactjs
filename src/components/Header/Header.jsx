@@ -62,7 +62,7 @@ const Header = () => {
                                 className="d-flex align-items-center logo"
                             >
                                 <img src={logo} alt="" />
-                                <span className="ml-2">Admin</span>
+                                <span className="ml-2">ADMIN</span>
                             </Link>
                         </div>
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import { MdDashboard } from "react-icons/md";
 import { FaAngleRight } from "react-icons/fa6";
@@ -10,6 +10,12 @@ import { IoMdSettings } from "react-icons/io";
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
+    const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+
+    const toggleSubmenu = () => {
+        setIsSubmenuOpen(!isSubmenuOpen);
+    }
+
   return (
     <>
         <div className='sidebar'>
@@ -23,14 +29,25 @@ const Sidebar = () => {
                         </Button>
                     </Link>
                 </li>
-                <li>
-                    <Link to="/" >
-                        <Button className='w-100'>
-                            <span className='icon'> <MdOutlineProductionQuantityLimits /></span>
-                            Products
-                            <span className='arrow'> <FaAngleRight /></span>
-                        </Button>
-                    </Link>
+                <li className={isSubmenuOpen ? 'submenu-open' : ''}>
+                    <Button className='w-100' onClick={toggleSubmenu}>
+                        <span className='icon'> <MdOutlineProductionQuantityLimits /></span>
+                        Products
+                        <span className={`arrow ${isSubmenuOpen ? 'rotated' : ''}`}> <FaAngleRight /></span>
+                    </Button>
+                    <div className={`subMenuWrapper ${isSubmenuOpen ? 'open' : ''}`}>
+                        <ul className="submenu">
+                            <li>
+                                <Link to="#" >Product List</Link>
+                            </li>
+                            <li>
+                                <Link to="#" >Product View</Link>
+                            </li>
+                            <li>
+                                <Link to="#" >Product Upload</Link>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li>
                     <Link to="/" >

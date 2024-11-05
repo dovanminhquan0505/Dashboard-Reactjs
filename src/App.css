@@ -281,7 +281,7 @@ header button.rounded-circle:hover svg {
     text-transform: capitalize !important;
     font-weight: 500 !important;
     font-family: "Open Sans", sans-serif !important;
-    font-size: 15px;
+    font-size: 15px !important;
 }
 
 .main .sidebarWrapper .sidebar ul li button * {
@@ -314,4 +314,58 @@ header button.rounded-circle:hover svg {
 
 .main .sidebarWrapper .sidebar ul li button:hover {
     background: #f1f1f1 !important;
+}
+
+.main .sidebarWrapper .sidebar ul .submenu {
+    padding: 0px 45px !important;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.main .sidebarWrapper .sidebar ul .submenu::before {
+    content: '';
+    width: 1px;
+    height: 95%;
+    position: absolute;
+    top: 0px;
+    left: 25px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.main .sidebarWrapper .sidebar ul .submenu li {
+    width: 100%;
+    list-style: none;
+    margin-left: -4px;
+}
+
+.main .sidebarWrapper .sidebar ul .submenu li a {
+    display: block;
+    padding: 6px 0px;
+    color: #5e5d72 !important;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500 !important;
+    transition: all 0.3s;
+}
+
+.main .sidebarWrapper .sidebar ul .submenu li a:hover {
+    color: #0858f7 !important;
+}
+
+.subMenuWrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.subMenuWrapper.open {
+    max-height: 200px; 
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.arrow.rotated {
+    transform: rotate(90deg);
 }

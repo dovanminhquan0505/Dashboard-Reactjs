@@ -8,6 +8,7 @@ import { AiFillMessage } from "react-icons/ai";
 import { IoIosNotifications } from "react-icons/io";
 import { IoMdSettings } from "react-icons/io";
 import { Link } from 'react-router-dom';
+import { IoLogOut } from "react-icons/io5";
 
 const Sidebar = () => {
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
@@ -127,6 +128,15 @@ const Sidebar = () => {
                         <span className='arrow'> <FaAngleRight /></span>
                     </Button>
                 </li>
+
+                <br />
+
+                <div className="logoutWrapper">
+                    <div className="logoutBox">
+                        
+                        <Button variant="contained"><IoLogOut /> Logout</Button>
+                    </div>
+                </div>
             </ul>
         </div>
     </>

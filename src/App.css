@@ -285,8 +285,7 @@ header button.rounded-circle:hover svg {
 }
 
 .main .sidebarWrapper .sidebar ul li button * {
-    color: #000;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .main .sidebarWrapper .sidebar ul li button .icon {
@@ -310,16 +309,34 @@ header button.rounded-circle:hover svg {
     justify-content: center;
     width: 25px;
     height: 25px;
+    transition: all 0.3s ease-in-out;
 }
 
 .main .sidebarWrapper .sidebar ul li button:hover {
     background: #f1f1f1 !important;
 }
 
+.main .sidebarWrapper .sidebar ul li button.active {
+    background: #f1f1f1 !important;
+}
+
+.main .sidebarWrapper .sidebar ul li button.active .icon {
+    color: #0858f7 !important;
+}
+
+.main .sidebarWrapper .sidebar ul li button.active .arrow {
+    transform: rotate(90deg);
+}
+
+.main .sidebarWrapper .sidebar ul li button.active .icon svg {
+    color: #0858f7 !important;
+}
+
 .main .sidebarWrapper .sidebar ul .submenu {
     padding: 0px 45px !important;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
+    height: 0px;
 }
 
 .main .sidebarWrapper .sidebar ul .submenu::before {
@@ -352,22 +369,24 @@ header button.rounded-circle:hover svg {
     color: #0858f7 !important;
 }
 
-.subMenuWrapper {
-    max-height: 0;
+.main .sidebarWrapper .sidebar ul .subMenuWrapper {
+    transition: all 0.4s;
+    height: 0px;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
 }
 
-.subMenuWrapper.open {
-    max-height: 200px; 
+.main .sidebarWrapper .sidebar ul .subMenuWrapper.colapsed .submenu {
+    opacity: 0;
 }
 
-.arrow {
-    transition: transform 0.3s ease;
+.main .sidebarWrapper .sidebar ul .subMenuWrapper.colapse {
+    height: auto;
+    overflow: inherit;
 }
 
-.arrow.rotated {
-    transform: rotate(90deg);
+.main .sidebarWrapper .sidebar ul .subMenuWrapper.colapse .submenu {
+    opacity: 1;
+    height: auto;
 }
 
 .logoutWrapper {

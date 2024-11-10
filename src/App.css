@@ -473,11 +473,12 @@ header button.rounded-circle:hover svg {
     justify-content: space-around;
     text-align: left !important;
     color: #fff;
+    text-transform: capitalize !important;
 }
 
 .dashboardBoxWrapper .dashboardBox .col1 h4 {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .dashboardBoxWrapper .dashboardBox .col1 span {
@@ -549,4 +550,19 @@ header button.rounded-circle:hover svg {
     color: #fff !important;
     font-size: 20px !important;
     opacity: 1 !important;
+}
+
+.graphBox h4 {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+}
+
+.graphBox p {
+    font-size: 14px;
+    color: #fff;
+    opacity: 0.7;
+}
+
+.card {
+    margin: 20px 0px;
 }

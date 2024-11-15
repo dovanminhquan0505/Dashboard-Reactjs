@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import DashboardBox from "./components/DashboardBox";
 import { FaUserCircle } from "react-icons/fa";
 import { IoCart } from "react-icons/io5";
@@ -10,14 +10,14 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { IoIosTimer } from "react-icons/io";
 import { Line } from "react-chartjs-2";
-import { Chart, registerables, LinearScale } from 'chart.js';
+import { Chart, registerables, LinearScale} from 'chart.js';
 
 const data = {
-    labels: ["2013", "2014", "2015", "2016"],
+    labels: ["2013", "2014", "2015", "2016", "2017", "2018", "2019"],
     datasets: [
         {
             label: "Total Sales",
-            data: [1000, 1170, 660, 1030],
+            data: [1000, 1170, 660, 1030, 999, 333, 912],
             backgroundColor: "#4da2ff",
             borderColor: "#4da2ff",
             tension: 0.4,
@@ -42,6 +42,7 @@ const options = {
     },
     scales: {
         y: {
+            type: "linear",
             beginAtZero: true,
             ticks: {
                 color: "#eee", 
@@ -51,8 +52,12 @@ const options = {
             },
         },
         x: {
+            type: "linear",
             ticks: {
                 color: "#eee",
+                callback: function(value, index, ticks) {
+                    return Math.trunc(value);
+                },
             },
             grid: {
                 color: "#555555",
@@ -65,6 +70,7 @@ const Dashboard = () => {
     const ITEM_HEIGHT = 48;
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
+    const chartRef = useRef(null);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -74,6 +80,12 @@ const Dashboard = () => {
 
     useEffect(() => {
         Chart.register(...registerables, LinearScale);
+
+        return () => {
+            if (chartRef.current) {
+                chartRef.current.destroy();
+            }
+        };
     }, []);
 
     return (
@@ -157,7 +169,7 @@ const Dashboard = () => {
                                 <p className="mb-4">$3,522.90 in last month</p>
 
                                 <div className="chart-container" style={{ marginTop: '3rem' }}>
-                                    <Line key={Math.random()} data={data} options={options} />
+                                    <Line  ref={chartRef} key={Math.random()} data={data} options={options} />
                                 </div>
                             </div>
                         </div>
@@ -166,6 +178,12 @@ const Dashboard = () => {
 
                 <div className="card shadow border-0 p-3 mt-4">
                     <h3 className="hd">Best Selling Products</h3>
+
+                    <div className="row">
+                        <div className="col">
+                            <h4>Show By</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

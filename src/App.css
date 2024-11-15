@@ -565,4 +565,11 @@ header button.rounded-circle:hover svg {
 
 .card {
     margin: 20px 0px;
+    border-radius: 10px;
+}
+
+.card .hd {
+    font-size: 18px;
+    font-weight: bold;
+    color: #403e57;
 }

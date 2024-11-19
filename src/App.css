@@ -577,3 +577,10 @@ header button.rounded-circle:hover svg {
 .chart__container {
     margin-left: -20px;
 }
+
+.cardFilters .col-md-3 h4 {
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: capitalize;
+    color: #403e57;
+}

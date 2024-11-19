@@ -18,6 +18,11 @@ import {
     Tooltip,
     Legend,
 } from "recharts";
+import InputLabel from '@mui/material/InputLabel';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
 
 const Dashboard = () => {
     const data = [
@@ -32,13 +37,18 @@ const Dashboard = () => {
 
     const ITEM_HEIGHT = 48;
     const [anchorEl, setAnchorEl] = useState(null);
+    const [showBy, setShowBy] = useState('');
+    const [categoryBy, setCategoryBy] = useState('');
+    const [brandBy, setBrandBy] = useState('');
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
+
     const handleClose = () => {
         setAnchorEl(null);
     };
+    
 
     return (
         <>
@@ -141,11 +151,72 @@ const Dashboard = () => {
                 <div className="card shadow border-0 p-3 mt-4">
                     <h3 className="hd">Best Selling Products</h3>
 
-                    <div className="row">
-                        <div className="col">
-                            <h4>Show By</h4>
+                    <div className="row cardFilters mt-3">
+                        <div className="col-md-3">
+                            <h4>SHOW BY</h4>
+                            <FormControl size="small" className="w-100">
+                                <Select
+                                    value={showBy}
+                                    onChange={(event) => setShowBy(event.target.value)}
+                                    displayEmpty
+                                    className="w-100"
+                                    inputProps={{ 'aria-label': 'Without label' }}
+                                    labelId="demo-select-small-label"
+                                    >
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    <MenuItem value={10}>Ten</MenuItem>
+                                    <MenuItem value={20}>Twenty</MenuItem>
+                                    <MenuItem value={30}>Thirty</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
+
+                        <div className="col-md-3">
+                            <h4>CATEGORY BY</h4>
+                            <FormControl size="small" className="w-100">
+                                <Select
+                                    value={categoryBy}
+                                    onChange={(event) => setCategoryBy(event.target.value)}
+                                    displayEmpty
+                                    className="w-100"
+                                    inputProps={{ 'aria-label': 'Without label' }}
+                                    labelId="demo-select-small-label"
+                                    >
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    <MenuItem value={10}>Ten</MenuItem>
+                                    <MenuItem value={20}>Twenty</MenuItem>
+                                    <MenuItem value={30}>Thirty</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
+
+                        <div className="col-md-3">
+                            <h4>BRAND BY</h4>
+                            <FormControl size="small" className="w-100">
+                                <Select
+                                    value={brandBy}
+                                    onChange={(event) => setBrandBy(event.target.value)}
+                                    displayEmpty
+                                    className="w-100"
+                                    inputProps={{ 'aria-label': 'Without label' }}
+                                    labelId="demo-select-small-label"
+                                    >
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    <MenuItem value={10}>Ten</MenuItem>
+                                    <MenuItem value={20}>Twenty</MenuItem>
+                                    <MenuItem value={30}>Thirty</MenuItem>
+                                </Select>
+                            </FormControl>
                         </div>
                     </div>
+
+                    <div className="table-responsive"></div>
                 </div>
             </div>
         </>

@@ -573,3 +573,7 @@ header button.rounded-circle:hover svg {
     font-weight: bold;
     color: #403e57;
 }
+
+.chart__container {
+    margin-left: -20px;
+}

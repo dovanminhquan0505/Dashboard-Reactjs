@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import DashboardBox from "./components/DashboardBox";
 import { FaUserCircle } from "react-icons/fa";
 import { IoCart } from "react-icons/io5";
@@ -9,84 +9,36 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { IoIosTimer } from "react-icons/io";
-import { Line } from "react-chartjs-2";
-import { Chart, registerables, LinearScale} from 'chart.js';
-
-const data = {
-    labels: ["2013", "2014", "2015", "2016", "2017", "2018", "2019"],
-    datasets: [
-        {
-            label: "Total Sales",
-            data: [1000, 1170, 660, 1030, 999, 333, 912],
-            backgroundColor: "#4da2ff",
-            borderColor: "#4da2ff",
-            tension: 0.4,
-        },
-    ],
-};
-
-const options = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-        title: {
-            display: false,
-        },
-        legend: {
-            display: true,
-            position: "bottom",
-            labels: {
-                color: "#eee",
-            },
-        },
-    },
-    scales: {
-        y: {
-            type: "linear",
-            beginAtZero: true,
-            ticks: {
-                color: "#eee", 
-            },
-            grid: {
-                color: "#555555",
-            },
-        },
-        x: {
-            type: "linear",
-            ticks: {
-                color: "#eee",
-                callback: function(value, index, ticks) {
-                    return Math.trunc(value);
-                },
-            },
-            grid: {
-                color: "#555555",
-            },
-        },
-    },
-};
+import {
+    LineChart,
+    Line,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    Tooltip,
+    Legend,
+} from "recharts";
 
 const Dashboard = () => {
+    const data = [
+        { name: "2013", value: 1000 },
+        { name: "2014", value: 1170 },
+        { name: "2015", value: 660 },
+        { name: "2016", value: 1030 },
+        { name: "2017", value: 999 },
+        { name: "2018", value: 333 },
+        { name: "2019", value: 912 },
+    ];
+
     const ITEM_HEIGHT = 48;
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
-    const chartRef = useRef(null);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
         setAnchorEl(null);
     };
-
-    useEffect(() => {
-        Chart.register(...registerables, LinearScale);
-
-        return () => {
-            if (chartRef.current) {
-                chartRef.current.destroy();
-            }
-        };
-    }, []);
 
     return (
         <>
@@ -168,9 +120,19 @@ const Dashboard = () => {
                                 </h3>
                                 <p className="mb-4">$3,522.90 in last month</p>
 
-                                <div className="chart-container" style={{ marginTop: '3rem' }}>
-                                    <Line  ref={chartRef} key={Math.random()} data={data} options={options} />
-                                </div>
+                                <LineChart className="chart__container" width={340} height={200} data={data}>
+                                    <XAxis dataKey="name" tick={{ fill: '#eee' }} />
+                                    <YAxis tick={{ fill: '#eee' }} />
+                                    <CartesianGrid strokeDasharray="3 3" stroke="#555555" />
+                                    <Tooltip />
+                                    <Legend labelStyle={{ color: '#eee' }} />
+                                    <Line
+                                        type="monotone"
+                                        dataKey="value"
+                                        stroke="#4da2ff"
+                                        name="Total Sales"
+                                    />
+                                </LineChart>
                             </div>
                         </div>
                     </div>

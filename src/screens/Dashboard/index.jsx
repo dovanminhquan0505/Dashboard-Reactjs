@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import DashboardBox from "./components/DashboardBox";
 import { FaUserCircle } from "react-icons/fa";
 import { IoCart } from "react-icons/io5";
@@ -22,7 +22,9 @@ import InputLabel from '@mui/material/InputLabel';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import { FaEye } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 const Dashboard = () => {
     const data = [
@@ -216,7 +218,48 @@ const Dashboard = () => {
                         </div>
                     </div>
 
-                    <div className="table-responsive"></div>
+                    <div className="table-responsive mt-3">
+                        <table className="table table-bordered">
+                            <thead className="table-dark">
+                                <tr>
+                                    <th>UID</th>
+                                    <th>PRODUCT</th>
+                                    <th>CATEGORY</th>
+                                    <th>BRAND</th>
+                                    <th>PRICE</th>
+                                    <th>STOCK</th>
+                                    <th>RATING</th>
+                                    <th>ORDER</th>
+                                    <th>SALES</th>
+                                    <th>ACTIONS</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>Tops and skirt set for Female </td>
+                                    <td>womans </td>
+                                    <td>richman</td>
+                                    <td>
+                                        <del className="old">$21.00</del>
+                                        <span className="new text-danger">$21.00</span>
+                                    </td>
+                                    <td>30</td>
+                                    <td>4.9(16)</td>
+                                    <td>380</td>
+                                    <td>$38k</td>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            <Button className="success" color="success"><FaEdit /></Button>
+                                            <Button className="error" color="error"><MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </>

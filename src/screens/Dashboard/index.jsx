@@ -25,6 +25,7 @@ import Select from '@mui/material/Select';
 import { FaEye } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import skirt from "../../assets/images/product-01.jpg";
 
 const Dashboard = () => {
     const data = [
@@ -238,7 +239,17 @@ const Dashboard = () => {
                             <tbody>
                                 <tr>
                                     <td>#1</td>
-                                    <td>Tops and skirt set for Female </td>
+                                    <td>
+                                        <div className="d-flex product__box">
+                                            <div className="imgWrapper">
+                                                <img src={skirt} alt="" />
+                                            </div>
+                                            <div className="info ps-2">
+                                                <h6>Tops and skirt set for Female...</h6>
+                                                <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set.</p>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td>womans </td>
                                     <td>richman</td>
                                     <td>

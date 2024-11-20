@@ -586,7 +586,7 @@ header button.rounded-circle:hover svg {
 }
 
 /* Table */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
     color: #403e57;
 }
 
@@ -598,6 +598,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .table tbody td {
+    width: 180px;
     font-size: 14px !important;
     color: #403e57;
     font-weight: 500;
@@ -605,11 +606,15 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
+.table tbody .actions {
+    width: 95px;
+}
+
 .table tbody .actions button {
     min-width: 32px !important;
     width: 32px !important;
     height: 32px !important;
-    margin: 0px 3px !important;
+    margin: 0px 4px !important;
 }
 
 .table tbody .actions .secondary {
@@ -632,4 +637,37 @@ h1, h2, h3, h4, h5, h6 {
 .table tbody tr td .new {
     display: block;
     width: 100%;
+}
+
+table tbody tr td .imgWrapper {
+    width: 40px !important;
+}
+
+table tbody tr td .imgWrapper img {
+    width: 40px !important;
+    height: 40px;
+    object-fit: contain;
+}
+
+table tbody tr td .info {
+    width: 140px;
+}
+
+.table tbody tr td .info h6 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.table tbody tr td .info p {
+    font-size: 13px;
+    line-height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #5e5d72;
+    margin-bottom: 0px;
 }

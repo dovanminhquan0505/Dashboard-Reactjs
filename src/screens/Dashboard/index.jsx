@@ -26,6 +26,7 @@ import { FaEye } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import skirt from "../../assets/images/product-01.jpg";
+import Pagination from '@mui/material/Pagination';
 
 const Dashboard = () => {
     const data = [
@@ -268,8 +269,140 @@ const Dashboard = () => {
                                         </div>
                                     </td>
                                 </tr>
+
+                                <tr>
+                                    <td>#1</td>
+                                    <td>
+                                        <div className="d-flex product__box">
+                                            <div className="imgWrapper">
+                                                <img src={skirt} alt="" />
+                                            </div>
+                                            <div className="info ps-2">
+                                                <h6>Tops and skirt set for Female...</h6>
+                                                <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set.</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>womans </td>
+                                    <td>richman</td>
+                                    <td>
+                                        <del className="old">$21.00</del>
+                                        <span className="new text-danger">$21.00</span>
+                                    </td>
+                                    <td>30</td>
+                                    <td>4.9(16)</td>
+                                    <td>380</td>
+                                    <td>$38k</td>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            <Button className="success" color="success"><FaEdit /></Button>
+                                            <Button className="error" color="error"><MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>#1</td>
+                                    <td>
+                                        <div className="d-flex product__box">
+                                            <div className="imgWrapper">
+                                                <img src={skirt} alt="" />
+                                            </div>
+                                            <div className="info ps-2">
+                                                <h6>Tops and skirt set for Female...</h6>
+                                                <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set.</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>womans </td>
+                                    <td>richman</td>
+                                    <td>
+                                        <del className="old">$21.00</del>
+                                        <span className="new text-danger">$21.00</span>
+                                    </td>
+                                    <td>30</td>
+                                    <td>4.9(16)</td>
+                                    <td>380</td>
+                                    <td>$38k</td>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            <Button className="success" color="success"><FaEdit /></Button>
+                                            <Button className="error" color="error"><MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>#1</td>
+                                    <td>
+                                        <div className="d-flex product__box">
+                                            <div className="imgWrapper">
+                                                <img src={skirt} alt="" />
+                                            </div>
+                                            <div className="info ps-2">
+                                                <h6>Tops and skirt set for Female...</h6>
+                                                <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set.</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>womans </td>
+                                    <td>richman</td>
+                                    <td>
+                                        <del className="old">$21.00</del>
+                                        <span className="new text-danger">$21.00</span>
+                                    </td>
+                                    <td>30</td>
+                                    <td>4.9(16)</td>
+                                    <td>380</td>
+                                    <td>$38k</td>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            <Button className="success" color="success"><FaEdit /></Button>
+                                            <Button className="error" color="error"><MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>#1</td>
+                                    <td>
+                                        <div className="d-flex product__box">
+                                            <div className="imgWrapper">
+                                                <img src={skirt} alt="" />
+                                            </div>
+                                            <div className="info ps-2">
+                                                <h6>Tops and skirt set for Female...</h6>
+                                                <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set.</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>womans </td>
+                                    <td>richman</td>
+                                    <td>
+                                        <del className="old">$21.00</del>
+                                        <span className="new text-danger">$21.00</span>
+                                    </td>
+                                    <td>30</td>
+                                    <td>4.9(16)</td>
+                                    <td>380</td>
+                                    <td>$38k</td>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            <Button className="success" color="success"><FaEdit /></Button>
+                                            <Button className="error" color="error"><MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
+
+                        <div className="d-flex table__footer">
+                            <Pagination count={50} color="primary" className="pagination" showFirstButton showLastButton/>
+                        </div>
                     </div>
                 </div>
             </div>

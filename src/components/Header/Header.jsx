@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo192.png";
 import Button from "@mui/material/Button";
 import { MdOutlineMenuOpen } from "react-icons/md";
-import { MdOutlineMenu } from "react-icons/ai";
+import { MdOutlineMenu } from "react-icons/md";
 import SearchBox from "../SearchBox/SearchBox";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
@@ -18,6 +18,7 @@ import Divider from "@mui/material/Divider";
 import { FaUser } from "react-icons/fa";
 import { BsShieldFillExclamation } from "react-icons/bs";
 import Logout from "@mui/icons-material/Logout";
+import { MyContext } from "../../App";
 
 const Header = () => {
     const [myAccountDrop, setMyAccountDrop] = useState(null);
@@ -26,6 +27,9 @@ const Header = () => {
     const openMyAccount = Boolean(myAccountDrop);
     const openNotifications = Boolean(notifications);
     const openCarts = Boolean(carts);
+
+    const context = useContext(MyContext);
+
     // Account drop
     const handleOpenMyAccount = (event) => {
         setMyAccountDrop(event.currentTarget);
@@ -67,8 +71,12 @@ const Header = () => {
                         </div>
 
                         <div className="col-2 d-flex align-items-center pl-4 part2">
-                            <Button className="rounded-circle me-3">
-                                <MdOutlineMenuOpen />
+                            <Button className="rounded-circle me-3" onClick={() => context.setIsToggleSidebar(!context.isToggleSidebar)}>
+                                {
+                                    context.isToggleSidebar
+                                        ? <MdOutlineMenu />
+                                        : <MdOutlineMenuOpen />
+                                }
                             </Button>
                             <SearchBox />
                         </div>

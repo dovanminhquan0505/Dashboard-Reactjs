@@ -401,6 +401,7 @@ const Dashboard = () => {
                         </table>
 
                         <div className="d-flex table__footer">
+                            <p>Showing <b>5</b> of <b>50</b> results</p>
                             <Pagination count={50} color="primary" className="pagination" showFirstButton showLastButton/>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo192.png";
+import logo from "../../assets/images/Logo.png";
 import Button from "@mui/material/Button";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { MdOutlineMenu } from "react-icons/md";
@@ -70,18 +70,25 @@ const Header = () => {
                             </Link>
                         </div>
 
-                        <div className="col-2 d-flex align-items-center pl-4 part2">
-                            <Button className="rounded-circle me-3" onClick={() => context.setIsToggleSidebar(!context.isToggleSidebar)}>
-                                {
-                                    context.isToggleSidebar
-                                        ? <MdOutlineMenu />
-                                        : <MdOutlineMenuOpen />
+                        <div className="col-2 d-flex align-items-center part2">
+                            <Button
+                                className="rounded-circle me-3"
+                                onClick={() =>
+                                    context.setIsToggleSidebar(
+                                        !context.isToggleSidebar
+                                    )
                                 }
+                            >
+                                {context.isToggleSidebar ? (
+                                    <MdOutlineMenu />
+                                ) : (
+                                    <MdOutlineMenuOpen />
+                                )}
                             </Button>
                             <SearchBox />
                         </div>
 
-                        <div className="col-6 d-flex align-items-center justify-content-end ms-auto part3">
+                        <div className="col-7 d-flex align-items-center justify-content-end ms-auto part3">
                             <Button className="rounded-circle me-3">
                                 <MdOutlineLightMode />
                             </Button>
@@ -357,87 +364,98 @@ const Header = () => {
                                     </div>
                                 </Menu>
                             </div>
-                        </div>
 
-                        <div className="col-2 myAccWrapper">
-                            <Button
-                                className="myAccount d-flex align-items-center"
-                                onClick={handleOpenMyAccount}
-                            >
-                                <div className="userImg">
-                                    <span className="rounded-circle">
-                                        <img src={userImg} alt="" />
-                                    </span>
-                                </div>
+                            {context.isLogin !== true ? (
+                                <Link to="/login"><Button className="btn-blue btn-lg btn-round">Sign In</Button></Link>
+                            ) : (
+                                <div className="myAccWrapper">
+                                    <Button
+                                        className="myAccount d-flex align-items-center"
+                                        onClick={handleOpenMyAccount}
+                                    >
+                                        <div className="userImg">
+                                            <span className="rounded-circle">
+                                                <img src={userImg} alt="" />
+                                            </span>
+                                        </div>
 
-                                <div className="userInfo">
-                                    <h4>Minh Quân</h4>
-                                    <p>admin@gmail.com</p>
+                                        <div className="userInfo">
+                                            <h4>Minh Quân</h4>
+                                            <p>admin@gmail.com</p>
+                                        </div>
+                                    </Button>
+                                    <Menu
+                                        anchorEl={myAccountDrop}
+                                        id="account-menu"
+                                        open={openMyAccount}
+                                        onClose={handleCloseMyAccount}
+                                        onClick={handleCloseMyAccount}
+                                        slotProps={{
+                                            paper: {
+                                                elevation: 0,
+                                                sx: {
+                                                    overflow: "visible",
+                                                    filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+                                                    mt: 1.5,
+                                                    "& .MuiAvatar-root": {
+                                                        width: 32,
+                                                        height: 32,
+                                                        ml: -0.5,
+                                                        mr: 1,
+                                                    },
+                                                    "&::before": {
+                                                        content: '""',
+                                                        display: "block",
+                                                        position: "absolute",
+                                                        top: 0,
+                                                        right: 14,
+                                                        width: 10,
+                                                        height: 10,
+                                                        bgcolor:
+                                                            "background.paper",
+                                                        transform:
+                                                            "translateY(-50%) rotate(45deg)",
+                                                        zIndex: 0,
+                                                    },
+                                                },
+                                            },
+                                        }}
+                                        transformOrigin={{
+                                            horizontal: "right",
+                                            vertical: "top",
+                                        }}
+                                        anchorOrigin={{
+                                            horizontal: "right",
+                                            vertical: "bottom",
+                                        }}
+                                    >
+                                        <MenuItem
+                                            onClick={handleCloseMyAccount}
+                                        >
+                                            <ListItemIcon>
+                                                <FaUser fontSize="medium" />
+                                            </ListItemIcon>
+                                            My Account
+                                        </MenuItem>
+                                        <MenuItem
+                                            onClick={handleCloseMyAccount}
+                                        >
+                                            <ListItemIcon>
+                                                <BsShieldFillExclamation fontSize="medium" />
+                                            </ListItemIcon>
+                                            Reset Password
+                                        </MenuItem>
+                                        <MenuItem
+                                            onClick={handleCloseMyAccount}
+                                        >
+                                            <ListItemIcon>
+                                                <Logout fontSize="small" />
+                                            </ListItemIcon>
+                                            Logout
+                                        </MenuItem>
+                                    </Menu>
                                 </div>
-                            </Button>
-                            <Menu
-                                anchorEl={myAccountDrop}
-                                id="account-menu"
-                                open={openMyAccount}
-                                onClose={handleCloseMyAccount}
-                                onClick={handleCloseMyAccount}
-                                slotProps={{
-                                    paper: {
-                                        elevation: 0,
-                                        sx: {
-                                            overflow: "visible",
-                                            filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-                                            mt: 1.5,
-                                            "& .MuiAvatar-root": {
-                                                width: 32,
-                                                height: 32,
-                                                ml: -0.5,
-                                                mr: 1,
-                                            },
-                                            "&::before": {
-                                                content: '""',
-                                                display: "block",
-                                                position: "absolute",
-                                                top: 0,
-                                                right: 14,
-                                                width: 10,
-                                                height: 10,
-                                                bgcolor: "background.paper",
-                                                transform:
-                                                    "translateY(-50%) rotate(45deg)",
-                                                zIndex: 0,
-                                            },
-                                        },
-                                    },
-                                }}
-                                transformOrigin={{
-                                    horizontal: "right",
-                                    vertical: "top",
-                                }}
-                                anchorOrigin={{
-                                    horizontal: "right",
-                                    vertical: "bottom",
-                                }}
-                            >
-                                <MenuItem onClick={handleCloseMyAccount}>
-                                    <ListItemIcon>
-                                        <FaUser fontSize="medium" />
-                                    </ListItemIcon>
-                                    My Account
-                                </MenuItem>
-                                <MenuItem onClick={handleCloseMyAccount}>
-                                    <ListItemIcon>
-                                        <BsShieldFillExclamation fontSize="medium" />
-                                    </ListItemIcon>
-                                    Reset Password
-                                </MenuItem>
-                                <MenuItem onClick={handleCloseMyAccount}>
-                                    <ListItemIcon>
-                                        <Logout fontSize="small" />
-                                    </ListItemIcon>
-                                    Logout
-                                </MenuItem>
-                            </Menu>
+                            )}
                         </div>
                     </div>
                 </div>

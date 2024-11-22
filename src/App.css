@@ -23,6 +23,11 @@ header {
     backdrop-filter: blur(5px);
 }
 
+header .part3 {
+    padding-left: 100px;
+    margin-right: 30px;
+}
+
 ::-webkit-scrollbar {
     width: 5px !important;
     height: 5px !important;
@@ -45,12 +50,27 @@ header {
     border-radius: 5px !important;
 }
 
+.btn-lg {
+    padding: 7px 25px !important;
+}
+
+.btn-round {
+    border-radius: 30px !important;
+}
+
+.full {
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+}
+
 header .logo {
     text-decoration: none;
 }
 
 header .logo img {
     width: 45px;
+    border-radius: 50%;
 }
 
 header .logo span {
@@ -610,6 +630,10 @@ h1, h2, h3, h4, h5, h6, p {
     color: #403e57;
 }
 
+.table {
+    --bs-table-bg: transparent !important;
+}
+
 .table-responsive::-webkit-scrollbar-thumb {
     background: #ccc !important;
 }
@@ -619,6 +643,10 @@ h1, h2, h3, h4, h5, h6, p {
     border-color: rgba(255, 255, 255, 0.1) !important;
     font-size: 14px !important;
     text-align: center;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #e9e3e3 !important;
 }
 
 .table tbody td {
@@ -713,4 +741,36 @@ table tbody tr td .info {
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 0px;
+}
+
+/* Login */
+.loginSection {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 35px 25px;
+    background: #fff;
+}
+
+.loginSection .loginBox {
+    width: 400px;
+    height: 600px;
+    background: #ccc;
+    margin: auto;
+}
+
+.loginSection .loginBox h5 {
+    color: #000;
+    font-size: 25px;
+}
+
+.loginPattern {
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 99;
+    pointer-events: none;
 }

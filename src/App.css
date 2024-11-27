@@ -69,6 +69,17 @@ header .part3 {
     width: 100% !important;
 }
 
+.link {
+    color: #5e5d72;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #0858f7 !important;
+    text-decoration: underline;
+}
+
 header .logo {
     text-decoration: none;
 }
@@ -781,8 +792,8 @@ table tbody tr td .info {
 
 .loginSection .loginBox .wrapper {
     width: 100%;
-    height: 300px;
-    background: #f0f0f0;
+    height: auto;
+    background: #fff;
     position: relative;
     z-index: 100;
     padding: 35px;
@@ -830,4 +841,64 @@ table tbody tr td .info {
 .toggleShowPassword svg {
     font-size: 20px;
     color: #5e5d72;
+}
+
+.loginSection .loginBox .wrapper .form-group .link {
+    font-size: 13px !important;
+}
+
+.loginSection .loginBox .wrapper .or span.line{
+    display: block;
+    width: 35%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.loginSection .loginBox .wrapper .or span.txt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+}
+
+.loginSection .loginBox .wrapper .loginWithGoogle,
+.loginSection .loginBox .wrapper .loginWithFacebook {
+    text-transform: capitalize;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.loginSection .loginBox .wrapper .loginWithGoogle .img__Google {
+    width: 40px;
+    height: 40px;
+    margin-right: -10px;
+}
+
+.loginSection .loginBox .wrapper .loginWithFacebook .img__Facebook {
+    margin-right: -6px;
+    margin-left: 20px;
+    width: 35px;
+    height: 35px;
+}
+
+.loginSection .loginBox .wrapper span.txt__register {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.loginSection .loginBox .wrapper .register__link {
+    color: #5e5d72;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.loginSection .loginBox .wrapper .register__link:hover {
+    color: #0858f7;
+    text-decoration: underline;
 }

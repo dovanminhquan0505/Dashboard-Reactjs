@@ -6,6 +6,9 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
+import googleIcon from "../../assets/images/Google_Icons.webp"
+import facebookIcon from "../../assets/images/logo-facebook.png"
 
 const Login = () => {
     const [inputIndex, setInputIndex] = useState(null);
@@ -49,7 +52,7 @@ const Login = () => {
                             </div>
 
                             <div
-                                className={`form-group mb-3 position-relative ${
+                                className={`form-group mb-4 position-relative ${
                                     inputIndex === 1 && "focus"
                                 }`}
                             >
@@ -80,6 +83,29 @@ const Login = () => {
 
                             <div className="form-group">
                                 <Button className="btn-blue btn-lg-big w-100">Sign In</Button>
+                            </div>
+
+                            <div className="form-group text-center mt-3">
+                                <Link to="/forgot-password" className="link">FORGOT PASSWORD</Link>
+                                <div className="d-flex align-items-center justify-content-center or mt-3 mb-3">
+                                    <span className="line"></span>
+                                    <span className="txt">or</span>
+                                    <span className="line"></span>
+                                </div>
+
+                                <Button variant="outlined" className="w-100 btn-lg btn-lg-big loginWithGoogle">
+                                    <img src={googleIcon} alt="google" className="img__Google" /> &nbsp;
+                                    Sign In With Google
+                                </Button>
+
+                                <Button variant="outlined" className="w-100 btn-lg btn-lg-big loginWithFacebook mb-4">
+                                    <img src={facebookIcon} alt="facebook" className="img__Facebook" /> &nbsp;
+                                    Sign In With Facebook
+                                </Button>
+
+                                <span className="txt__register text-center">
+                                    Don't have an account? <Link to="/signup" className="register__link">Register</Link>
+                                </span>
                             </div>
                         </form>
                     </div>

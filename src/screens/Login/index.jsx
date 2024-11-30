@@ -7,7 +7,7 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import googleIcon from "../../assets/images/Google_Icons.webp"
+import googleIcon from "../../assets/images/Google_Icons.webp"                                                                                                                                                                                                                          
 import facebookIcon from "../../assets/images/logo-facebook.png"
 
 const Login = () => {

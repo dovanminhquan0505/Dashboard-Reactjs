@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { MyContext } from "../../App";
-import Pattern from "../../assets/images/login-background.jpg";
+import Pattern from "../../assets/images/signup-background.webp";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaEye } from "react-icons/fa";

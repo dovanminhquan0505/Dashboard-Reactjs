@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import DashboardBox from "./components/DashboardBox";
 import { FaUserCircle } from "react-icons/fa";
 import { IoCart } from "react-icons/io5";
@@ -27,6 +27,7 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import skirt from "../../assets/images/product-01.jpg";
 import Pagination from '@mui/material/Pagination';
+import { MyContext } from "../../App";
 
 const Dashboard = () => {
     const data = [
@@ -45,6 +46,12 @@ const Dashboard = () => {
     const [categoryBy, setCategoryBy] = useState('');
     const [brandBy, setBrandBy] = useState('');
     const open = Boolean(anchorEl);
+    const context = useContext(MyContext);
+    
+    useEffect(() => {
+        context.setIsHideSidebarAndHeader(false);
+    }, []);
+
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };

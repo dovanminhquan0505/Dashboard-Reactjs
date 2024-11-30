@@ -105,268 +105,299 @@ const Header = () => {
                                 >
                                     <FaRegBell />
                                 </Button>
-                                <Menu
-                                    anchorEl={notifications}
-                                    className="notifications dropdown__list"
-                                    id="notifications-menu"
-                                    open={openNotifications}
-                                    onClose={handleCloseNotifications}
-                                    onClick={handleCloseNotifications}
-                                    slotProps={{
-                                        paper: {
-                                            elevation: 0,
-                                            sx: {
-                                                overflow: "visible",
-                                                filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-                                                mt: 1.5,
-                                                "& .MuiAvatar-root": {
-                                                    width: 32,
-                                                    height: 32,
-                                                    ml: -0.5,
-                                                    mr: 1,
-                                                },
-                                                "&::before": {
-                                                    content: '""',
-                                                    display: "block",
-                                                    position: "absolute",
-                                                    top: 0,
-                                                    right: 14,
-                                                    width: 10,
-                                                    height: 10,
-                                                    bgcolor: "background.paper",
-                                                    transform:
-                                                        "translateY(-50%) rotate(45deg)",
-                                                    zIndex: 0,
+                                {context.isLogin === true && (
+                                    <Menu
+                                        anchorEl={notifications}
+                                        className="notifications dropdown__list"
+                                        id="notifications-menu"
+                                        open={openNotifications}
+                                        onClose={handleCloseNotifications}
+                                        onClick={handleCloseNotifications}
+                                        slotProps={{
+                                            paper: {
+                                                elevation: 0,
+                                                sx: {
+                                                    overflow: "visible",
+                                                    filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+                                                    mt: 1.5,
+                                                    "& .MuiAvatar-root": {
+                                                        width: 32,
+                                                        height: 32,
+                                                        ml: -0.5,
+                                                        mr: 1,
+                                                    },
+                                                    "&::before": {
+                                                        content: '""',
+                                                        display: "block",
+                                                        position: "absolute",
+                                                        top: 0,
+                                                        right: 14,
+                                                        width: 10,
+                                                        height: 10,
+                                                        bgcolor:
+                                                            "background.paper",
+                                                        transform:
+                                                            "translateY(-50%) rotate(45deg)",
+                                                        zIndex: 0,
+                                                    },
                                                 },
                                             },
-                                        },
-                                    }}
-                                    transformOrigin={{
-                                        horizontal: "right",
-                                        vertical: "top",
-                                    }}
-                                    anchorOrigin={{
-                                        horizontal: "right",
-                                        vertical: "bottom",
-                                    }}
-                                >
-                                    <div className="head ps-3 pb-1">
-                                        <h4>Notifications (12)</h4>
-                                    </div>
+                                        }}
+                                        transformOrigin={{
+                                            horizontal: "right",
+                                            vertical: "top",
+                                        }}
+                                        anchorOrigin={{
+                                            horizontal: "right",
+                                            vertical: "bottom",
+                                        }}
+                                    >
+                                        <div className="head ps-3 pb-1">
+                                            <h4>Notifications (12)</h4>
+                                        </div>
 
-                                    <Divider className="mb-1" />
+                                        <Divider className="mb-1" />
 
-                                    <div className="scroll">
-                                        <MenuItem
-                                            onClick={handleCloseNotifications}
-                                        >
-                                            <div className="d-flex">
-                                                <div>
-                                                    <div className="userImg">
-                                                        <span className="rounded-circle">
-                                                            <img
-                                                                src={userImg}
-                                                                alt=""
-                                                            />
-                                                        </span>
+                                        <div className="scroll">
+                                            <MenuItem
+                                                onClick={
+                                                    handleCloseNotifications
+                                                }
+                                            >
+                                                <div className="d-flex">
+                                                    <div>
+                                                        <div className="userImg">
+                                                            <span className="rounded-circle">
+                                                                <img
+                                                                    src={
+                                                                        userImg
+                                                                    }
+                                                                    alt=""
+                                                                />
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="dropdownInfo">
+                                                        <h4>
+                                                            <span>
+                                                                <b>Minh Quân</b>{" "}
+                                                                added to his
+                                                                favorite list
+                                                                <b>
+                                                                    Leather belt
+                                                                    steve madden
+                                                                </b>
+                                                            </span>
+                                                        </h4>
+                                                        <p className="text-sky mb-0">
+                                                            few seconds ago
+                                                        </p>
                                                     </div>
                                                 </div>
+                                            </MenuItem>
+                                            <MenuItem
+                                                onClick={
+                                                    handleCloseNotifications
+                                                }
+                                            >
+                                                <div className="d-flex">
+                                                    <div>
+                                                        <div className="userImg">
+                                                            <span className="rounded-circle">
+                                                                <img
+                                                                    src={
+                                                                        userImg
+                                                                    }
+                                                                    alt=""
+                                                                />
+                                                            </span>
+                                                        </div>
+                                                    </div>
 
-                                                <div className="dropdownInfo">
-                                                    <h4>
-                                                        <span>
-                                                            <b>Minh Quân</b>{" "}
-                                                            added to his
-                                                            favorite list
-                                                            <b>
-                                                                Leather belt
-                                                                steve madden
-                                                            </b>
-                                                        </span>
-                                                    </h4>
-                                                    <p className="text-sky mb-0">
-                                                        few seconds ago
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </MenuItem>
-                                        <MenuItem
-                                            onClick={handleCloseNotifications}
-                                        >
-                                            <div className="d-flex">
-                                                <div>
-                                                    <div className="userImg">
-                                                        <span className="rounded-circle">
-                                                            <img
-                                                                src={userImg}
-                                                                alt=""
-                                                            />
-                                                        </span>
+                                                    <div className="dropdownInfo">
+                                                        <h4>
+                                                            <span>
+                                                                <b>Minh Quân</b>{" "}
+                                                                added to his
+                                                                favorite list
+                                                                <b>
+                                                                    Leather belt
+                                                                    steve madden
+                                                                </b>
+                                                            </span>
+                                                        </h4>
+                                                        <p className="text-sky mb-0">
+                                                            few seconds ago
+                                                        </p>
                                                     </div>
                                                 </div>
+                                            </MenuItem>
+                                            <MenuItem
+                                                onClick={
+                                                    handleCloseNotifications
+                                                }
+                                            >
+                                                <div className="d-flex">
+                                                    <div>
+                                                        <div className="userImg">
+                                                            <span className="rounded-circle">
+                                                                <img
+                                                                    src={
+                                                                        userImg
+                                                                    }
+                                                                    alt=""
+                                                                />
+                                                            </span>
+                                                        </div>
+                                                    </div>
 
-                                                <div className="dropdownInfo">
-                                                    <h4>
-                                                        <span>
-                                                            <b>Minh Quân</b>{" "}
-                                                            added to his
-                                                            favorite list
-                                                            <b>
-                                                                Leather belt
-                                                                steve madden
-                                                            </b>
-                                                        </span>
-                                                    </h4>
-                                                    <p className="text-sky mb-0">
-                                                        few seconds ago
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </MenuItem>
-                                        <MenuItem
-                                            onClick={handleCloseNotifications}
-                                        >
-                                            <div className="d-flex">
-                                                <div>
-                                                    <div className="userImg">
-                                                        <span className="rounded-circle">
-                                                            <img
-                                                                src={userImg}
-                                                                alt=""
-                                                            />
-                                                        </span>
+                                                    <div className="dropdownInfo">
+                                                        <h4>
+                                                            <span>
+                                                                <b>Minh Quân</b>{" "}
+                                                                added to his
+                                                                favorite list
+                                                                <b>
+                                                                    Leather belt
+                                                                    steve madden
+                                                                </b>
+                                                            </span>
+                                                        </h4>
+                                                        <p className="text-sky mb-0">
+                                                            few seconds ago
+                                                        </p>
                                                     </div>
                                                 </div>
+                                            </MenuItem>
+                                            <MenuItem
+                                                onClick={
+                                                    handleCloseNotifications
+                                                }
+                                            >
+                                                <div className="d-flex">
+                                                    <div>
+                                                        <div className="userImg">
+                                                            <span className="rounded-circle">
+                                                                <img
+                                                                    src={
+                                                                        userImg
+                                                                    }
+                                                                    alt=""
+                                                                />
+                                                            </span>
+                                                        </div>
+                                                    </div>
 
-                                                <div className="dropdownInfo">
-                                                    <h4>
-                                                        <span>
-                                                            <b>Minh Quân</b>{" "}
-                                                            added to his
-                                                            favorite list
-                                                            <b>
-                                                                Leather belt
-                                                                steve madden
-                                                            </b>
-                                                        </span>
-                                                    </h4>
-                                                    <p className="text-sky mb-0">
-                                                        few seconds ago
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </MenuItem>
-                                        <MenuItem
-                                            onClick={handleCloseNotifications}
-                                        >
-                                            <div className="d-flex">
-                                                <div>
-                                                    <div className="userImg">
-                                                        <span className="rounded-circle">
-                                                            <img
-                                                                src={userImg}
-                                                                alt=""
-                                                            />
-                                                        </span>
+                                                    <div className="dropdownInfo">
+                                                        <h4>
+                                                            <span>
+                                                                <b>Minh Quân</b>{" "}
+                                                                added to his
+                                                                favorite list
+                                                                <b>
+                                                                    Leather belt
+                                                                    steve madden
+                                                                </b>
+                                                            </span>
+                                                        </h4>
+                                                        <p className="text-sky mb-0">
+                                                            few seconds ago
+                                                        </p>
                                                     </div>
                                                 </div>
+                                            </MenuItem>
+                                            <MenuItem
+                                                onClick={
+                                                    handleCloseNotifications
+                                                }
+                                            >
+                                                <div className="d-flex">
+                                                    <div>
+                                                        <div className="userImg">
+                                                            <span className="rounded-circle">
+                                                                <img
+                                                                    src={
+                                                                        userImg
+                                                                    }
+                                                                    alt=""
+                                                                />
+                                                            </span>
+                                                        </div>
+                                                    </div>
 
-                                                <div className="dropdownInfo">
-                                                    <h4>
-                                                        <span>
-                                                            <b>Minh Quân</b>{" "}
-                                                            added to his
-                                                            favorite list
-                                                            <b>
-                                                                Leather belt
-                                                                steve madden
-                                                            </b>
-                                                        </span>
-                                                    </h4>
-                                                    <p className="text-sky mb-0">
-                                                        few seconds ago
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </MenuItem>
-                                        <MenuItem
-                                            onClick={handleCloseNotifications}
-                                        >
-                                            <div className="d-flex">
-                                                <div>
-                                                    <div className="userImg">
-                                                        <span className="rounded-circle">
-                                                            <img
-                                                                src={userImg}
-                                                                alt=""
-                                                            />
-                                                        </span>
+                                                    <div className="dropdownInfo">
+                                                        <h4>
+                                                            <span>
+                                                                <b>Minh Quân</b>{" "}
+                                                                added to his
+                                                                favorite list
+                                                                <b>
+                                                                    Leather belt
+                                                                    steve madden
+                                                                </b>
+                                                            </span>
+                                                        </h4>
+                                                        <p className="text-sky mb-0">
+                                                            few seconds ago
+                                                        </p>
                                                     </div>
                                                 </div>
+                                            </MenuItem>
+                                            <MenuItem
+                                                onClick={
+                                                    handleCloseNotifications
+                                                }
+                                            >
+                                                <div className="d-flex">
+                                                    <div>
+                                                        <div className="userImg">
+                                                            <span className="rounded-circle">
+                                                                <img
+                                                                    src={
+                                                                        userImg
+                                                                    }
+                                                                    alt=""
+                                                                />
+                                                            </span>
+                                                        </div>
+                                                    </div>
 
-                                                <div className="dropdownInfo">
-                                                    <h4>
-                                                        <span>
-                                                            <b>Minh Quân</b>{" "}
-                                                            added to his
-                                                            favorite list
-                                                            <b>
-                                                                Leather belt
-                                                                steve madden
-                                                            </b>
-                                                        </span>
-                                                    </h4>
-                                                    <p className="text-sky mb-0">
-                                                        few seconds ago
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </MenuItem>
-                                        <MenuItem
-                                            onClick={handleCloseNotifications}
-                                        >
-                                            <div className="d-flex">
-                                                <div>
-                                                    <div className="userImg">
-                                                        <span className="rounded-circle">
-                                                            <img
-                                                                src={userImg}
-                                                                alt=""
-                                                            />
-                                                        </span>
+                                                    <div className="dropdownInfo">
+                                                        <h4>
+                                                            <span>
+                                                                <b>Minh Quân</b>{" "}
+                                                                added to his
+                                                                favorite list
+                                                                <b>
+                                                                    Leather belt
+                                                                    steve madden
+                                                                </b>
+                                                            </span>
+                                                        </h4>
+                                                        <p className="text-sky mb-0">
+                                                            few seconds ago
+                                                        </p>
                                                     </div>
                                                 </div>
+                                            </MenuItem>
+                                        </div>
 
-                                                <div className="dropdownInfo">
-                                                    <h4>
-                                                        <span>
-                                                            <b>Minh Quân</b>{" "}
-                                                            added to his
-                                                            favorite list
-                                                            <b>
-                                                                Leather belt
-                                                                steve madden
-                                                            </b>
-                                                        </span>
-                                                    </h4>
-                                                    <p className="text-sky mb-0">
-                                                        few seconds ago
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </MenuItem>
-                                    </div>
-
-                                    <div className="pt-2 w-100">
-                                        <Button className="btn-blue w-100">
-                                            View All Notifications
-                                        </Button>
-                                    </div>
-                                </Menu>
+                                        <div className="pt-2 w-100">
+                                            <Button className="btn-blue w-100">
+                                                View All Notifications
+                                            </Button>
+                                        </div>
+                                    </Menu>
+                                )}
                             </div>
 
                             {context.isLogin !== true ? (
-                                <Link to="/login"><Button className="btn-blue btn-lg btn-round">Sign In</Button></Link>
+                                <Link to="/login">
+                                    <Button className="btn-blue btn-lg btn-round">
+                                        Sign In
+                                    </Button>
+                                </Link>
                             ) : (
                                 <div className="myAccWrapper">
                                     <Button

@@ -13,6 +13,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { IoShieldCheckmarkSharp } from "react-icons/io5";
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import { IoMdHome } from "react-icons/io";
 
 const Signup = () => {
     const [inputIndex, setInputIndex] = useState(null);
@@ -33,7 +34,18 @@ const Signup = () => {
             <img src={Pattern} alt="background" className="loginPattern" />
             <section className="loginSection signUpSection">
                 <div className="row">
-                    <div className="col-md-8"></div>
+                    <div className="col-md-8 d-flex align-items-center justify-content-center flex-column left__content">
+                        <h1>BEST UX/UI FASHION <strong>ECOMMERCE DASHBOARD</strong> & ADMIN PANEL</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Tenetur necessitatibus sint voluptas, laudantium provident aperiam. Vitae dolorum nam, 
+                            inventore est deserunt eaque repellat incidunt, commodi itaque enim recusandae repudiandae dolor.
+                        </p>
+
+                        <div className="w-100 mt-3">
+                            <Link to={"/"}><Button className="btn-blue btn-lg btn-lg-big"><IoMdHome />Go To Home</Button></Link>
+                        </div>
+                    </div>
 
                     <div className="col-md-4">
                         <div className="loginBox">
@@ -151,7 +163,25 @@ const Signup = () => {
                                         </span>
                                     </div>
 
-                                    <FormControlLabel control={<Checkbox />} label="I agree to the all Terms & Conditions" className="mb-3" />
+                                    <FormControlLabel
+                                        control={<Checkbox
+                                            sx={{
+                                              "& .MuiSvgIcon-root": {
+                                                fontSize: "22px",
+                                                mr: "-5px",
+                                                ml: "5px",
+                                              },
+                                            }}
+                                          />}
+                                        label="I agree to the all Terms & Conditions"
+                                        className="mb-3"
+                                        sx={{
+                                            "& .MuiFormControlLabel-label": {
+                                                fontSize: "14px",
+                                                mt: "1px",
+                                            },
+                                        }}
+                                    />
 
                                     <div className="form-group">
                                         <Button className="btn-blue btn-lg-big w-100">

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { MyContext } from "../../App";
-import Pattern from "../../assets/images/login-background.jpg";
+import Pattern from "../../assets/images/signup-background.webp";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaEye } from "react-icons/fa";
@@ -9,10 +9,15 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import googleIcon from "../../assets/images/Google_Icons.webp";
 import facebookIcon from "../../assets/images/logo-facebook.png";
+import { FaUserCircle } from "react-icons/fa";
+import { IoShieldCheckmarkSharp } from "react-icons/io5";
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 const Signup = () => {
     const [inputIndex, setInputIndex] = useState(null);
     const [isShowPassword, setIsShowPassword] = useState(false);
+    const [isShowConfirmPassword, setIsShowConfirmPassword] = useState(false);
     const context = useContext(MyContext);
 
     useEffect(() => {
@@ -33,7 +38,9 @@ const Signup = () => {
                     <div className="col-md-4">
                         <div className="loginBox">
                             <div className="text-center">
-                                <h5 className="fw-bold">Login to Dashboard</h5>
+                                <h5 className="fw-bold">
+                                    Register a new account
+                                </h5>
                             </div>
 
                             <div className="wrapper mt-3 card border">
@@ -44,20 +51,37 @@ const Signup = () => {
                                         }`}
                                     >
                                         <span className="icon">
-                                            <MdEmail />
+                                            <FaUserCircle />
                                         </span>
                                         <input
                                             type="text"
                                             className="form-control"
-                                            placeholder="enter your email"
+                                            placeholder="enter your name"
                                             onFocus={() => focusInput(0)}
                                             onBlur={() => setInputIndex(null)}
                                         />
                                     </div>
 
                                     <div
-                                        className={`form-group mb-4 position-relative ${
+                                        className={`form-group mb-3 position-relative ${
                                             inputIndex === 1 && "focus"
+                                        }`}
+                                    >
+                                        <span className="icon">
+                                            <MdEmail />
+                                        </span>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            placeholder="enter your email"
+                                            onFocus={() => focusInput(1)}
+                                            onBlur={() => setInputIndex(null)}
+                                        />
+                                    </div>
+
+                                    <div
+                                        className={`form-group mb-3 position-relative ${
+                                            inputIndex === 2 && "focus"
                                         }`}
                                     >
                                         <span className="icon">
@@ -71,7 +95,7 @@ const Signup = () => {
                                             }`}
                                             className="form-control"
                                             placeholder="enter your password"
-                                            onFocus={() => focusInput(1)}
+                                            onFocus={() => focusInput(2)}
                                             onBlur={() => setInputIndex(null)}
                                         />
 
@@ -91,19 +115,51 @@ const Signup = () => {
                                         </span>
                                     </div>
 
+                                    <div
+                                        className={`form-group mb-1 position-relative ${
+                                            inputIndex === 3 && "focus"
+                                        }`}
+                                    >
+                                        <span className="icon">
+                                            <IoShieldCheckmarkSharp />
+                                        </span>
+                                        <input
+                                            type={`${
+                                                isShowConfirmPassword
+                                                    ? "text"
+                                                    : "password"
+                                            }`}
+                                            className="form-control"
+                                            placeholder="confirm your password"
+                                            onFocus={() => focusInput(3)}
+                                            onBlur={() => setInputIndex(null)}
+                                        />
+
+                                        <span
+                                            className="toggleShowPassword"
+                                            onClick={() =>
+                                                setIsShowConfirmPassword(
+                                                    !isShowConfirmPassword
+                                                )
+                                            }
+                                        >
+                                            {isShowConfirmPassword ? (
+                                                <FaEyeSlash />
+                                            ) : (
+                                                <FaEye />
+                                            )}
+                                        </span>
+                                    </div>
+
+                                    <FormControlLabel control={<Checkbox />} label="I agree to the all Terms & Conditions" className="mb-3" />
+
                                     <div className="form-group">
                                         <Button className="btn-blue btn-lg-big w-100">
-                                            Sign In
+                                            Sign Up
                                         </Button>
                                     </div>
 
                                     <div className="form-group text-center mt-3">
-                                        <Link
-                                            to="/forgot-password"
-                                            className="link"
-                                        >
-                                            FORGOT PASSWORD
-                                        </Link>
                                         <div className="d-flex align-items-center justify-content-center or mt-3 mb-3">
                                             <span className="line"></span>
                                             <span className="txt">or</span>
@@ -135,12 +191,12 @@ const Signup = () => {
                                         </Button>
 
                                         <span className="txt__register text-center">
-                                            Don't have an account?{" "}
+                                            Already have an account?{" "}
                                             <Link
-                                                to="/signup"
+                                                to="/login"
                                                 className="register__link"
                                             >
-                                                Register
+                                                Login
                                             </Link>
                                         </span>
                                     </div>

@@ -89,7 +89,7 @@ const Header = () => {
                         </div>
 
                         <div className="col-7 d-flex align-items-center justify-content-end ms-auto part3">
-                            <Button className="rounded-circle me-3">
+                            <Button className="rounded-circle me-3" onClick={() => context.setIsThemeMode(!context.isThemeMode)}>
                                 <MdOutlineLightMode />
                             </Button>
                             <Button className="rounded-circle me-3">

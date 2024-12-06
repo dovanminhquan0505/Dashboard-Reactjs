@@ -338,6 +338,7 @@ body.dark .dropdown__list li.MuiButtonBase-root:hover {
     overflow-x: hidden;
 }
 
+/* Sidebar */
 .main .sidebarWrapper {
     width: 19%;
     flex: 0 0 19%;
@@ -363,6 +364,10 @@ body.dark .dropdown__list li.MuiButtonBase-root:hover {
     transition: all 0.3s ease-in-out;
 }
 
+body.dark .main .sidebarWrapper .sidebar {
+    background: #112143 !important;
+}
+
 .main .sidebarWrapper.toggle .sidebar {
     left: -100%;
 }
@@ -372,11 +377,19 @@ body.dark .dropdown__list li.MuiButtonBase-root:hover {
 }
 
 .main .sidebarWrapper .sidebar::-webkit-scrollbar-thumb {
-    background: transparent !important;
+    background: #bbb6b6 !important;
 }
 
 .main .sidebarWrapper:hover .sidebar::-webkit-scrollbar {
-    background: #a8a4a4 !important;
+    background: transparent !important;
+}
+
+body.dark .main .sidebarWrapper .sidebar::-webkit-scrollbar-thumb {
+    background: #183e8c !important;
+}
+
+body.dark .main .sidebarWrapper:hover .sidebar::-webkit-scrollbar {
+    background: transparent !important;
 }
 
 .main .sidebarWrapper .sidebar ul {
@@ -399,6 +412,11 @@ body.dark .dropdown__list li.MuiButtonBase-root:hover {
     font-weight: 500 !important;
     font-family: "Open Sans", sans-serif !important;
     font-size: 15px !important;
+}
+
+body.dark .main .sidebarWrapper .sidebar ul li button,
+body.dark .main .sidebarWrapper .sidebar ul li button .arrow {
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .main .sidebarWrapper .sidebar ul li button * {
@@ -437,6 +455,14 @@ body.dark .dropdown__list li.MuiButtonBase-root:hover {
     background: #f1f1f1 !important;
 }
 
+body.dark .main .sidebarWrapper .sidebar ul li button:hover {
+    background: #182f60 !important;
+}
+
+body.dark .main .sidebarWrapper .sidebar ul li button.active {
+    background: #182f60 !important;
+}
+
 .main .sidebarWrapper .sidebar ul li button.active .icon {
     color: #0858f7 !important;
 }
@@ -466,6 +492,10 @@ body.dark .dropdown__list li.MuiButtonBase-root:hover {
     background: rgba(0, 0, 0, 0.2);
 }
 
+body.dark .main .sidebarWrapper .sidebar ul .submenu::before {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
 .main .sidebarWrapper .sidebar ul .submenu li {
     width: 100%;
     list-style: none;
@@ -482,7 +512,15 @@ body.dark .dropdown__list li.MuiButtonBase-root:hover {
     transition: all 0.3s;
 }
 
+body.dark .main .sidebarWrapper .sidebar ul .submenu li a {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
 .main .sidebarWrapper .sidebar ul .submenu li a:hover {
+    color: #0858f7 !important;
+}
+
+body.dark .main .sidebarWrapper .sidebar ul .submenu li a:hover {
     color: #0858f7 !important;
 }
 
@@ -521,6 +559,11 @@ body.dark .dropdown__list li.MuiButtonBase-root:hover {
     justify-content: center;
     position: relative;
     overflow: hidden;
+}
+
+body.dark .logoutWrapper .logoutBox {
+    background-image: linear-gradient(#183e8c, #163474) !important;
+    background: transparent;
 }
 
 .logoutWrapper .logoutBox::before {

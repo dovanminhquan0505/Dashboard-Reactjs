@@ -11,6 +11,10 @@ body {
     overflow-x: hidden;
 }
 
+body.dark {
+    background: #071739 !important;
+}
+
 header {
     width: 100%;
     height: 70px;
@@ -225,7 +229,7 @@ body.dark .myAccount .userInfo * {
     color: rgba(255, 255, 255, 0.8) !important;
 }
 
-body.dark .MuiPaper-elevation{
+body.dark .MuiPaper-elevation {
     background: #12254e !important;
 }
 
@@ -741,6 +745,14 @@ body.dark .logoutWrapper .logoutBox {
     color: #403e57;
 }
 
+body.dark .card {
+    background: #112143 !important;
+}
+
+body.dark .card .hd {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
 .chart__container {
     margin-left: -20px;
 }
@@ -750,6 +762,27 @@ body.dark .logoutWrapper .logoutBox {
     font-weight: 800;
     text-transform: capitalize;
     color: #403e57;
+}
+
+body.dark .cardFilters .col-md-3 h4 {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.dark .css-1cprn2g-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,
+body.dark .css-1u6jos5-MuiSvgIcon-root-MuiSelect-icon,
+body.dark .css-r4d5p-MuiSvgIcon-root-MuiSelect-icon,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark p {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.dark .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border-color: rgba(255, 255, 255, 0.3)  !important;
 }
 
 /* Table */
@@ -876,6 +909,53 @@ table tbody tr td .info {
     margin-bottom: 0px;
 }
 
+body.dark table td {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.dark .table tbody tr:nth-child(odd) {
+    background: #071637 !important;
+}
+
+body.dark .table .table-dark th {
+    background: #0639a0 !important;
+}
+
+body.dark .table-bordered td,
+body.dark .table-bordered th {
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+body.dark .css-1gaup4j-MuiButtonBase-root-MuiPaginationItem-root {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.dark .css-1gaup4j-MuiButtonBase-root-MuiPaginationItem-root:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark .css-1gaup4j-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    background: #0639a0 !important;
+}
+
+body.dark .table tbody .actions button.secondary svg,
+body.dark .table tbody .actions button.success svg,
+body.dark .table tbody .actions button.error svg {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.dark .table tbody .actions .secondary {
+    background: #bb26d9 !important;
+}
+
+body.dark .table tbody .actions button.success {
+    background: #229c62 !important;
+}
+
+body.dark .table tbody .actions button.error {
+    background: #d9223c !important;
+}
+
 /* Login */
 .loginSection {
     position: relative;
@@ -910,7 +990,7 @@ table tbody tr td .info {
 .loginSection .loginBox .wrapper {
     width: 100%;
     height: auto;
-    background: #f0f0f0 ;
+    background: #f0f0f0;
     position: relative;
     z-index: 100;
     padding: 35px;

@@ -746,7 +746,7 @@ body.dark .logoutWrapper .logoutBox {
 }
 
 body.dark .card {
-    background: #112143 !important;
+    background: #1b2b4d !important;
 }
 
 body.dark .card .hd {
@@ -1161,4 +1161,21 @@ body.dark .table tbody .actions button.error {
     position: absolute;
     bottom: 20px;
     left: 20px;
+}
+
+body.dark .dashboardBoxWrapperRowV2 .dashboardBox .chart,
+body.dark .dashboardBoxWrapper .dashboardBox .chart {
+    opacity: 0.1;
+}
+
+body.dark .dashboardBoxWrapperRowV2 .dashboardBox .chart svg,
+body.dark .dashboardBoxWrapper .dashboardBox .chart svg,
+body.dark .breadcrumbs_ li .css-mfiyqs-MuiChip-root .MuiChip-icon,
+body.dark .breadcrumbs_ .css-1wuw8dw-MuiBreadcrumbs-separator {
+    color: #fffc !important;
+}
+
+body.dark .breadcrumbs_ li .MuiChip-filled {
+    background-color: #112143 !important;
+    color: #ffffffb3 !important;
 }

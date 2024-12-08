@@ -18,6 +18,7 @@ const StyledBreadcrumb = styled(Chip)(({ theme }) => {
       fontWeight: theme.typography.fontWeightRegular,
       '&:hover, &:focus': {
         backgroundColor: emphasize(backgroundColor, 0.06),
+        cursor: 'pointer',
       },
       '&:active': {
         boxShadow: theme.shadows[1],

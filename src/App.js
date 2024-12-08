@@ -7,12 +7,15 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import { createContext, useEffect, useState } from "react";
 import Login from "./screens/Login";
 import Signup from "./screens/Signup";
+import Products from "./screens/Products";
+import ProductDetails from "./screens/ProductDetails";
+import ProductUpload from "./screens/ProductUpload";
 
 const MyContext = createContext();
 
 function App() {
     const [isToggleSidebar, setIsToggleSidebar] = useState(false);
-    const [isLogin, setIsLogin] = useState(true);
+    const [isLogin, setIsLogin] = useState(false);
     const [isHideSidebarAndHeader, setIsHideSidebarAndHeader] = useState(false);
     const [isThemeMode, setIsThemeMode] = useState(true);
 
@@ -77,7 +80,22 @@ function App() {
                             <Route
                                 path="/signup"
                                 exact={true}
-                                element={<Signup     />}
+                                element={<Signup/>}
+                            />
+                            <Route
+                                path="/products"
+                                exact={true}
+                                element={<Products/>}
+                            />
+                            <Route
+                                path="/product-details"
+                                exact={true}
+                                element={<ProductDetails/>}
+                            />
+                            <Route
+                                path="/product-upload"
+                                exact={true}
+                                element={<ProductUpload/>}
                             />
                         </Routes>
                     </div>

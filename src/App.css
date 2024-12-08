@@ -679,7 +679,7 @@ body.dark .logoutWrapper .logoutBox {
 }
 
 .dashboardBoxWrapper .dashboardBox .chart {
-    opacity: 0.1;
+    opacity: 0.05;
     position: absolute;
     bottom: 20px;
     left: 20px;
@@ -1140,4 +1140,25 @@ body.dark .table tbody .actions button.error {
     color: #403e57;
     font-size: 18px;
     font-weight: 500;
+}
+
+/* Products */
+.right__content .card__products {
+    margin: 0px;
+}
+
+.right__content .dashboardBoxWrapperRowV2 .dashboardBox {
+    height: 120px !important;
+    width: 32%;
+}
+
+.right__content .dashboardBoxWrapperRowV2 .dashboardBox .bottomElement {
+    display: none !important;
+}
+
+.right__content .dashboardBoxWrapperRowV2 .dashboardBox .chart {
+    opacity: 0.05;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
 }

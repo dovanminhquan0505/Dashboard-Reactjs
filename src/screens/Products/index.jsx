@@ -17,6 +17,7 @@ import skirt from "../../assets/images/product-01.jpg";
 import Pagination from '@mui/material/Pagination';
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
+import { Link } from "react-router-dom";
 
 //Breadcrumbs customizations
 const StyledBreadcrumb = styled(Chip)(({ theme }) => {
@@ -185,7 +186,9 @@ const Products = () => {
                                     <td>$38k</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            <Link to="/product-details">
+                                                <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            </Link>
                                             <Button className="success" color="success"><FaEdit /></Button>
                                             <Button className="error" color="error"><MdDelete /></Button>
                                         </div>
@@ -217,7 +220,9 @@ const Products = () => {
                                     <td>$38k</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            <Link to="/product-details">
+                                                <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            </Link>
                                             <Button className="success" color="success"><FaEdit /></Button>
                                             <Button className="error" color="error"><MdDelete /></Button>
                                         </div>
@@ -249,7 +254,9 @@ const Products = () => {
                                     <td>$38k</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            <Link to="/product-details">
+                                                <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            </Link>
                                             <Button className="success" color="success"><FaEdit /></Button>
                                             <Button className="error" color="error"><MdDelete /></Button>
                                         </div>
@@ -281,7 +288,9 @@ const Products = () => {
                                     <td>$38k</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            <Link to="/product-details">
+                                                <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            </Link>
                                             <Button className="success" color="success"><FaEdit /></Button>
                                             <Button className="error" color="error"><MdDelete /></Button>
                                         </div>
@@ -313,7 +322,9 @@ const Products = () => {
                                     <td>$38k</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            <Link to="/product-details">
+                                                <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            </Link>
                                             <Button className="success" color="success"><FaEdit /></Button>
                                             <Button className="error" color="error"><MdDelete /></Button>
                                         </div>

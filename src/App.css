@@ -1179,3 +1179,17 @@ body.dark .breadcrumbs_ li .MuiChip-filled {
     background-color: #112143 !important;
     color: #ffffffb3 !important;
 }
+
+/* Product view */
+.slick-slide {
+    outline: none !important;
+}
+
+.sliderSmall .slick-slide {
+    padding-right: 5px;
+}
+
+.sliderSmall .slick-slide .items{
+    border-radius: 7px !important;
+    overflow: hidden;
+}
